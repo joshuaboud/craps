@@ -1,9 +1,6 @@
--- die.vhd
+-- die_TB.vhd
 -- Authour: Josh Boudreau B00819096
--- die of configurable number of sides
--- rolls when roll is '0', clkDiv output to
--- use as clk input for next die to permute
--- all values
+-- die testbench
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
