@@ -1,4 +1,4 @@
- -- adder.vhd
+-- adder.vhd
 -- Authour: Josh Boudreau B00819096
 -- simple adder with no carry in
 -- output is one bit wider than inputs
@@ -18,9 +18,8 @@ entity adder is
         result : out STD_LOGIC_VECTOR (DEPTH downto 0)
     );
 end adder;
-    
+
 architecture Behavioral of adder is
 begin
     result <= ('0' & a) + ('0' & b);
 end Behavioral;
- 

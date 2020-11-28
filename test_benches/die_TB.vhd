@@ -8,7 +8,7 @@ use ieee.std_logic_unsigned.all;
 
 entity die_TB is
 end die_TB;
-    
+
 architecture Behavioral of die_TB is
     component die is
         -- define generic number of sides

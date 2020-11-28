@@ -8,7 +8,7 @@ use ieee.std_logic_unsigned.all;
 
 entity adder_TB is
 end adder_TB;
-    
+
 architecture Behavioral of adder_TB is
     component adder is
         generic(
@@ -25,7 +25,6 @@ architecture Behavioral of adder_TB is
     signal result : STD_LOGIC_VECTOR(3 downto 0);
 begin
     add : adder port map (a => a, b => b, result => result);
-    
     test_adder: process
     begin
         for i in 0 to 7 loop

@@ -22,7 +22,7 @@ entity die is
         result : out STD_LOGIC_VECTOR (DEPTH-1 downto 0)
     );
 end die;
-    
+
 architecture Behavioral of die is
     signal current : std_logic_vector (DEPTH-1 downto 0) := (0 => '1', others => '0');
     signal slow_clock : std_logic := '0';
