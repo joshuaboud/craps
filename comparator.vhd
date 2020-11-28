@@ -21,4 +21,3 @@ architecture Behavioral of comparator is
 begin
     result <= '1' when (a = b) else '0';
 end Behavioral;
- 
