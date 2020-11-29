@@ -62,7 +62,7 @@ begin
         end if;
     end process;
     -- output definitions
-    roll <= '1' when (s = roll1 or s = roll2) else '0';
+    roll <= enter when (s = roll1 or s = roll2) else '0'; -- pass through
     storePoint <= '1' when (s = test1) else '0';
     win <= '1' when (s = won) else '0';
     lose <= '1' when (s = lost) else '0';
