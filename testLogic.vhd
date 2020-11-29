@@ -21,4 +21,3 @@ begin
     D711 <= '1' when (input = "0111" or input = "1011") else '0';
     D2312 <= '1' when (input = "0010" or input = "0011" or input = "1100") else '0';
 end Behavioral;
- 
