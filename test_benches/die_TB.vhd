@@ -42,13 +42,13 @@ begin
     
     test_dice: process
     begin
-        wait for 10 us;
+        wait for 15 us;
         roll <= '1'; -- hold roll button
-        wait for 424 us;
+        wait for 197 us;
         roll <= '0';
         wait for 1 ms;
         roll <= '1'; -- hold roll button
-        wait for 690 us; -- avg button press delay_length
+        wait for 695 us; -- avg button press delay_length
         roll <= '1';
         wait for 1 ms;
     end process;
