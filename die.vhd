@@ -28,7 +28,7 @@ architecture Behavioral of die is
     signal slow_clock : std_logic := '0';
 begin
     process(clk, roll) begin
-        if(rising_edge(clk) and roll = '0') then
+        if(rising_edge(clk) and roll = '1') then
             if(current = SIDES) then
                 current <= (DEPTH-2 downto 0 => '0') & '1';
                 slow_clock <= '1';

@@ -25,7 +25,7 @@ architecture Behavioral of die_TB is
     end component;
     signal clk1 : STD_LOGIC := '0'; -- main clock
     signal clk2 : STD_LOGIC := '0'; -- slower clock for die2
-    signal roll : STD_LOGIC := '1'; -- input to roll
+    signal roll : STD_LOGIC := '0'; -- input to roll
     signal result1 : STD_LOGIC_VECTOR (2 downto 0);
     signal result2 : STD_LOGIC_VECTOR (2 downto 0);
 begin
@@ -43,11 +43,11 @@ begin
     test_dice: process
     begin
         wait for 10 us;
-        roll <= '0'; -- hold roll button
+        roll <= '1'; -- hold roll button
         wait for 424 us;
-        roll <= '1';
+        roll <= '0';
         wait for 1 ms;
-        roll <= '0'; -- hold roll button
+        roll <= '1'; -- hold roll button
         wait for 690 us; -- avg button press delay_length
         roll <= '1';
         wait for 1 ms;

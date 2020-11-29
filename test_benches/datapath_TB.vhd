@@ -20,7 +20,7 @@ architecture Behavioral of datapath_TB is
     end component;
     signal clk : STD_LOGIC := '0'; -- main clock
     signal display1, display2 : STD_LOGIC_VECTOR (2 downto 0);
-    signal roll : STD_LOGIC := '1'; -- input to roll
+    signal roll : STD_LOGIC := '0'; -- input to roll
     signal sp : STD_LOGIC := '0'; -- input to store point
     signal D7, D711, D2312, eq : STD_LOGIC;
 begin
@@ -37,7 +37,7 @@ begin
         clk <= '0';
     end process;
     
-    roll <= '0'; -- constantly roll
+    roll <= '1'; -- constantly roll
     
     test_dice: process
     begin
