@@ -24,13 +24,13 @@ entity die is
 end die;
 
 architecture Behavioral of die is
-    signal current : std_logic_vector (DEPTH-1 downto 0) := (0 => '1', others => '0');
+    signal current : std_logic_vector (DEPTH-1 downto 0) := (DEPTH-2 downto 0 => '0') & '1';
     signal slow_clock : std_logic := '0';
 begin
     process(clk, roll) begin
         if(rising_edge(clk) and roll = '0') then
             if(current = SIDES) then
-                current <= (0 => '1', others => '0');
+                current <= (DEPTH-2 downto 0 => '0') & '1';
                 slow_clock <= '1';
             else
                 current <= current + '1';
