@@ -1,6 +1,6 @@
 -- pointRegister.vhd
 -- Authour: Josh Boudreau B00819096
--- store a value
+-- store a value on rising edge
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
