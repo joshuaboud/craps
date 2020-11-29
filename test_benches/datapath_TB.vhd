@@ -25,7 +25,7 @@ architecture Behavioral of datapath_TB is
     signal D7, D711, D2312, eq : STD_LOGIC;
 begin
     dp : datapath port map (
-        clk => clk, display1 => display1, display2 => display2, roll => roll, 
+        clk => clk, display1 => display1, display2 => display2, roll => roll,
         storePoint => sp, D7 => D7, D711 => D711, D2312 => D2312, eq => eq
     );
     
