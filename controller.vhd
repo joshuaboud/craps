@@ -16,8 +16,8 @@ end controller;
 
 architecture Behavioural of controller is
     type states is (
-        start, firstRoll, firstTest, secondRoll,
-        secondTest, lost, won
+        start, roll1, test1, roll2,
+        test2, lost, won
     );
     signal s : states;
 begin
@@ -30,31 +30,31 @@ begin
             case s is
                 when start =>
                     if(enter = '1') then
-                        s <= firstRoll;
+                        s <= roll1;
                     end if; -- else no change (wait for roll input)
-                when firstRoll =>
+                when roll1 =>
                     if(enter = '0') then
-                        s <= firstTest;
+                        s <= test1;
                     end if; -- else no change (wait for end of rolling)
-                when firstTest =>
+                when test1 =>
                     if(D711 = '1') then
                         s <= won;
                     elsif(D2312 = '1') then
                         s <= lost;
                     elsif(D711 = '0' and D2312 = '0' and enter = '1') then
-                        s <= secondRoll;
+                        s <= roll2;
                     end if; -- else no change (wait for next roll)
-                when secondRoll =>
+                when roll2 =>
                     if(enter = '0') then
-                        s <= secondTest;
+                        s <= test2;
                     end if; -- else no change
-                when secondTest =>
+                when test2 =>
                     if(D7 = '1') then
                         s <= lost;
                     elsif(eq = '1') then
                         s <= won;
                     elsif(D7 = '0' and eq = '0' and enter = '1') then
-                        s <= secondRoll;
+                        s <= roll2;
                     end if; -- else no change (wait for next roll)
                 when others =>
                     null; -- won and lost have no transition
@@ -62,8 +62,8 @@ begin
         end if;
     end process;
     -- output definitions
-    roll <= '1' when (s = firstRoll or s = secondRoll) else '0';
-    storePoint <= '1' when (s = firstTest) else '0';
+    roll <= '1' when (s = roll1 or s = roll2) else '0';
+    storePoint <= '1' when (s = test1) else '0';
     win <= '1' when (s = won) else '0';
     lose <= '1' when (s = lost) else '0';
 end Behavioural;
