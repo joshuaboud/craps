@@ -1,7 +1,7 @@
 -- die.vhd
 -- Authour: Josh Boudreau B00819096
 -- die of configurable number of sides
--- rolls when roll is '0', clkDiv output to
+-- rolls when roll is '1', clkDiv output to
 -- use as clk input for next die to permute
 -- all values
 
